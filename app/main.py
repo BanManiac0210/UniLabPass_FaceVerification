@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from app.api.endpoints import router
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 app = FastAPI()
 
