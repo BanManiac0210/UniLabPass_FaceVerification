@@ -4,11 +4,11 @@ from app.services.face_verification import compare_faces
 
 router = APIRouter()
 
-@router.get("/healthcheck/")
+@router.get("/healthcheck")
 async def healthcheck():
     return {"status": "Server is running"}
 
-@router.post("/verify_faces/")
+@router.post("/verify_faces")
 async def verify_faces(file1: UploadFile = File(...), file2: UploadFile = File(...)):
     """
     API nhận 2 ảnh khuôn mặt dưới dạng file, xử lý trực tiếp mà không lưu vào backend.
