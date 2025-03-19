@@ -15,6 +15,9 @@ def extract_face(image_bytes):
 
     if img is None:
         raise ValueError("Không thể đọc ảnh từ byte stream.")
+    
+    # Giảm kích thước ảnh trước khi phát hiện khuôn mặt
+    img = cv2.resize(img, (640, 480))  # Giảm kích thước ảnh xuống để giảm tải bộ nhớ
 
     # Phát hiện khuôn mặt trong ảnh
     faces = detector.detect_faces(img)
