@@ -13,7 +13,7 @@ def compare_faces(img1, img2):
     face2 = extract_face(img2)
 
     if face1 is None or face2 is None:
-        return {"match": False, "distance": -1}
+        return {"error": "Face not found on one or two images."}
 
     # Trích xuất vector đặc trưng
     face1_embedding = embedder.embeddings([face1])[0]

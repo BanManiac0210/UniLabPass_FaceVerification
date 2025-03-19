@@ -1,5 +1,4 @@
 from fastapi import APIRouter, UploadFile, File
-import numpy as np
 from app.services.face_verification import compare_faces
 
 router = APIRouter()

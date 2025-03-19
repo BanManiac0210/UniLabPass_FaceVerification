@@ -33,5 +33,6 @@ def extract_face(image_bytes):
 
     # Thay đổi kích thước khuôn mặt về 160x160 để phù hợp với FaceNet
     face_img = cv2.resize(face_img, (160, 160))
+    face_img = cv2.cvtColor(face_img, cv2.COLOR_BGR2RGB)  # Chuyển sang RGB
 
     return face_img
