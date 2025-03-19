@@ -18,7 +18,7 @@ async def verify_faces(file1: UploadFile = File(...), file2: UploadFile = File(.
         image2_bytes = await file2.read()
 
         # So sánh hai ảnh khuôn mặt
-        result = await compare_faces(image1_bytes, image2_bytes)
+        result = compare_faces(image1_bytes, image2_bytes)
 
         return result
     except Exception as e:
