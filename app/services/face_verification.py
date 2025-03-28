@@ -35,7 +35,7 @@ def verify_faces(face1, face2, threshold = 0.5):
     feature2 = extract_feature(face2)
     similarity = cosine_similarity(feature1, feature2)
     if (similarity > threshold):
-        return {"code": 200, "message": "Same person", "similarity": float(similarity)}
+        return {"code": 200, "samePerson": True, "similarity": float(similarity)}
     else:
-        return {"code": 200, "message": "Different person", "similarity": float(similarity)}
+        return {"code": 200, "samePerson": False, "similarity": float(similarity)}
     
